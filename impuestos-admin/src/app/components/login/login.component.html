@@ -7,11 +7,11 @@
         <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
             <h2 class="titulo">Iniciar Sesión</h2>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" [(ngModel)]="usuario.email" name="email" placeholder="Email" required>
+                <input type="email" class="form-control" id="floatingInput" [(ngModel)]="usuario.Email" name="email" placeholder="Email" required>
                 <label for="floatingInput">Email/Usuario</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" [(ngModel)]="usuario.password" name="password" placeholder="Password" required>
+                <input type="password" class="form-control" id="floatingPassword" [(ngModel)]="usuario.Password" name="password" placeholder="Password" required>
                 <label for="floatingPassword">Password</label>
             </div>
             <div class="mb-3">
