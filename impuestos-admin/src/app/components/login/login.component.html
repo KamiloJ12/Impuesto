@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="wave"></div>
+    <div class="img">
+        <img src="assets/img/components/login/Impuestos.svg" alt="impuesto" class="image">
+    </div>
+    <div class="login-container">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <h2 class="titulo">Iniciar Sesión</h2>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" [(ngModel)]="usuario.email" name="email" placeholder="Email" required>
+                <label for="floatingInput">Email/Usuario</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" [(ngModel)]="usuario.password" name="password" placeholder="Password" required>
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="mb-3">
+                <a href="#" class="link-primary">¿Has olvidado tu contraseña?</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mb-3">Ingresar</button>
+        </form>
+    </div>
+</div>

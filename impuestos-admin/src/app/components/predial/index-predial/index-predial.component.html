@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+
+
+
+<app-navbar (onToggleSideNav)="onToggleSideNav($event)"></app-navbar>
+
+
+<div class="home" [ngClass]="isSideNavCollapsed ? 'close': ''">
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4" style="min-height:100vh">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h4 class="m-0 font-weight-bold text-primary">Predial</h4>
+            <a [routerLink]="['/predial/add']" class="d-flex align-items-center">Nuevo Predial<i class='bx bx-chevron-right bx-sm' style=""></i></a>          
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Numero Cuenta</th>
+                            <th>Dueño</th>
+                            <th>Avaluo</th>
+                            <th>Direccion</th>
+                            <th>Destino</th>
+                            <th>Area Territorio</th>
+                            <th>Area Construida</th>
+                            <th>Estrato</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Numero Cuenta</th>
+                            <th>Dueño</th>
+                            <th>Avaluo</th>
+                            <th>Direccion</th>
+                            <th>Destino</th>
+                            <th>Area Territorio</th>
+                            <th>Area Construida</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr *ngFor="let predial of prediales">
+                            <td>{{predial.Id}}</td>
+                            <td>{{predial.NumeroCuenta}}</td>
+                            <td>{{predial.Propietario}}</td>
+                            <td>$ {{predial.Avaluo}}</td>
+                            <td>{{predial.Direccion}}</td>
+                            <td>{{predial.Destino}}</td>
+                            <td>{{predial.AreaTerritorio}} m</td>
+                            <td>{{predial.AreaConstruida}} m</td>
+                            <td>{{predial.Estrato}}</td>
+                            <td><a [routerLink]="['/predial', predial.Id]"><i class='bx bxs-edit bx-sm'></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+

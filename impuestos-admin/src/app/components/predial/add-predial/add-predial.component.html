@@ -1,0 +1,106 @@
+<app-navbar (onToggleSideNav)="onToggleSideNav($event)"></app-navbar>
+
+<div class="home" [ngClass]="isSideNavCollapsed ? 'close': ''">
+
+  <div class="card shadow mb-4" style="min-height:100vh">
+    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+      <h4 class="m-0 font-weight-bold text-primary">Nuevo Predial</h4>
+      <a [routerLink]="['/predial']" class="d-flex align-items-center">Regresar<i
+          class='bx bx-chevron-left bx-sm'></i></a>
+    </div>
+    <div class="card-body">
+      <form #registroForm="ngForm" (ngSubmit)="add(registroForm)">
+        <div class="row">
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="numeroCuenta" placeholder="115846955" name="numeroCuenta" [(ngModel)]="predial.NumeroCuenta">
+              <label for="numeroCuenta">Numero de Cuenta</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="avaluo" placeholder="1500000" name="avaluo" [(ngModel)]="predial.Avaluo">
+              <label for="avaluo">Avaluo</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <select class="form-select" id="destino" aria-label="destino" name="destino" [(ngModel)]="predial.Destino">
+                <option selected value="Habitacional">Habitacional</option>
+                <option value="Industrial">Industrial</option>
+                <option value="Comercial">Comercial</option>
+                <option value="Agropecuario">Agropecuario</option>
+                <option value="Minero">Minero</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Recreacional">Recreacional</option>
+                <option value="Salubridad">Salubridad</option>
+                <option value="Institucional">Institucional</option>
+                <option value="Educativo">Educativo</option>
+                <option value="Religioso">Religioso</option>
+                <option value="Agrícola">Agrícola</option>
+                <option value="Pcuario">Pcuario</option>
+                <option value="Agroindustrial">Agroindustrial</option>
+                <option value="Forestal">Forestal</option>
+                <option value="Uso publico">Uso publico</option>
+                <option value="Lote urbanizable no urbanizado">Lote urbanizable no urbanizado</option>
+                <option value="Lote urbanizado no construido y/o edificado">Lote urbanizado no construido y/o edificado</option>
+                <option value="Lote no urbanizable">Lote no urbanizable</option>
+                <option value="Servicios especiales">Servicios especiales</option>
+              </select>
+              <label for="destino">Destino</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" list="datalistOptions" id="Propietario"
+                placeholder="Fernando Fernandez" name="propietario" [(ngModel)]="predial.Propietario">
+              <label for="Dueño">Dueño</label>
+              <datalist id="datalistOptions" >
+                <option *ngFor="let usuario of usuarios" value="{{usuario.Id}}">{{usuario.Cedula}} - {{usuario.Nombres}} {{usuario.Apellidos}}</option>
+              </datalist>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="direccion" placeholder="Av 10 # 15 - 18" name="direccion" [(ngModel)]="predial.Direccion">
+              <label for="direccion">Direccion</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="areaTerritorio" placeholder="300" name="areaTerritorio" [(ngModel)]="predial.AreaTerritorio">
+              <label for="areaTerritorio">Area Territorio</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="areaConstruida" placeholder="150" name="areaConstruida" [(ngModel)]="predial.AreaConstruida" (change)="areaConstruida()">
+              <label for="areaConstruida">Area Construida</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <select class="form-select" id="estrato" aria-label="estrato" name="estrato" [(ngModel)]="predial.Estrato">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>  
+              <label for="estrato">Estrato</label>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-primary">Agregar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
