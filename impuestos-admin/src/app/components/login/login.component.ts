@@ -28,11 +28,7 @@ export class LoginComponent implements OnInit {
 
   login(loginForm: NgForm) {
     if (loginForm.valid) {
-      let data = {
-        email: this.usuario.email,
-        password: this.usuario.password
-      }
-      this._usuarioService.login(data).subscribe(
+      this._usuarioService.login(this.usuario).subscribe(
         response => {
           if(response.user.Rol == "Superadministrador" || response.user.Rol == "Administrador"){
             localStorage.setItem('token', response.tokenReturn);
