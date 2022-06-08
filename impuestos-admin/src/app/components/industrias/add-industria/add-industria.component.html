@@ -13,19 +13,19 @@
             <div class="row">
               <div class="col">
                 <div class="form-floating mb-3">
-                  <input type="number" class="form-control" id="nit" placeholder="115846955" name="nit" [(ngModel)]="predial.NIT">
+                  <input type="number" class="form-control" id="nit" placeholder="115846955" name="nit" [(ngModel)]="industria.NIT">
                   <label for="nit">NIT</label>
                 </div>
               </div>
               <div class="col">
                 <div class="form-floating mb-3">
-                  <input type="number" class="form-control" id="numeroPlaca" placeholder="1500000" name="numeroPlaca" [(ngModel)]="predial.NumeroPlaca">
+                  <input type="number" class="form-control" id="numeroPlaca" placeholder="1500000" name="numeroPlaca" [(ngModel)]="industria.NumeroPlaca">
                   <label for="numeroPlaca">Numero Placa</label>
                 </div>
               </div>
               <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="avaluo" placeholder="1500000" name="avaluo" [(ngModel)]="predial.Avaluo">
+                    <input type="number" class="form-control" id="avaluo" placeholder="1500000" name="avaluo" [(ngModel)]="industria.Avaluo">
                     <label for="avaluo">Avaluo</label>
                 </div>
               </div>
@@ -34,7 +34,7 @@
               <div class="col">
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" list="datalistOptions" id="Propietario"
-                    placeholder="Fernando Fernandez" name="propietario" [(ngModel)]="predial.Propietario">
+                    placeholder="Fernando Fernandez" name="propietario" [(ngModel)]="industria.Propietario">
                   <label for="Dueño">Dueño</label>
                   <datalist id="datalistOptions" >
                     <option *ngFor="let usuario of usuarios" value="{{usuario.Id}}">{{usuario.Cedula}} - {{usuario.Nombres}} {{usuario.Apellidos}}</option>
@@ -43,7 +43,7 @@
               </div>
               <div class="col">
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="direccion" placeholder="Av 10 # 15 - 18" name="direccion" [(ngModel)]="predial.Direccion">
+                  <input type="text" class="form-control" id="direccion" placeholder="Av 10 # 15 - 18" name="direccion" [(ngModel)]="industria.Direccion">
                   <label for="direccion">Direccion</label>
                 </div>
               </div>
@@ -51,7 +51,7 @@
             <div class="row">
               <div class="col">
                 <div class="form-floating mb-3">
-                    <select class="form-select" id="esTienda" aria-label="esTienda" name="esTienda" [(ngModel)]="predial.EsTienda">
+                    <select class="form-select" id="esTienda" aria-label="esTienda" name="esTienda" [(ngModel)]="industria.EsTienda">
                       <option selected value="true">Si</option>
                       <option value="false">No</option>
                     </select>  
@@ -60,7 +60,7 @@
               </div>
               <div class="col col-9">
                 <div class="form-floating mb-3">
-                  <input type="date" class="form-control" id="inicioActividad" placeholder="150" name="inicioActividad" [(ngModel)]="predial.InicioActividad" >
+                  <input type="date" class="form-control" id="inicioActividad" placeholder="150" name="inicioActividad" [(ngModel)]="industria.InicioActividad" >
                   <label for="inicioActividad">Inicio Actividad</label>
                 </div>
               </div>
@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <select class="form-select" id="tipoPersona" aria-label="tipoPersona" name="tipoPersona" [(ngModel)]="predial.TipoPersona">
+                        <select class="form-select" id="tipoPersona" aria-label="tipoPersona" name="tipoPersona" [(ngModel)]="industria.TipoPersona">
                           <option selected value="Persona Natural">Persona Natural</option>
                           <option value="Persona Juridica">Persona Juridica</option>
                         </select>  
@@ -77,7 +77,7 @@
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <select class="form-select" id="tipoRegimen" aria-label="tipoRegimen" name="tipoRegimen" [(ngModel)]="predial.TipoRegimen">
+                        <select class="form-select" id="tipoRegimen" aria-label="tipoRegimen" name="tipoRegimen" [(ngModel)]="industria.TipoRegimen">
                           <option selected value="Regimen Comun">Regimen Comun</option>
                           <option value="Regimen Simplificado">Regimen Simplificado</option>
                           <option value="Regimen Especial">Regimen Especial</option>
@@ -94,7 +94,7 @@
             </div>
           </form>
         </div>
-      </div>
+    </div>
 
 </div>
 

@@ -18,7 +18,7 @@ export class AddIndustriaComponent implements OnInit {
 
   public isSideNavCollapsed = true;
   public token: any = '';
-  public predial: any = {
+  public industria: any = {
     EsTienda : false,
     TipoPersona : 'Persona Natural'
   };
@@ -55,7 +55,7 @@ export class AddIndustriaComponent implements OnInit {
   }
 
   add(registroForm: NgForm): void{
-    this._usuarioService.addIndustria(this.predial, this.token).subscribe(
+    this._usuarioService.addIndustria(this.industria, this.token).subscribe(
       response => {
         iziToast.show({
           backgroundColor: '#52BE80 ',

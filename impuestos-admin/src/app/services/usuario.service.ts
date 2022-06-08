@@ -72,4 +72,14 @@ export class UsuarioService {
     let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
     return this._http.post(this.url + 'industria/add', data, { headers: headers });
   }
+
+  getIndustriaById(id:string, token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'industria/'+id, { headers: headers });
+  }
+
+  updateIndustria(data: Object, token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.put(this.url + 'industria/update', data, { headers: headers });
+  }
 }
