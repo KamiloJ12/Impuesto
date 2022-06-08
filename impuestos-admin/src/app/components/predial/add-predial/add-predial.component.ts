@@ -40,7 +40,6 @@ export class AddPredialComponent implements OnInit {
     this._usuarioService.getUsuarios(this.token).subscribe(
       response => {
         this.usuarios = response;
-        console.log(this.usuarios);
       },
       error => {
         iziToast.show({

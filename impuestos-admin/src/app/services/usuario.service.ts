@@ -67,4 +67,9 @@ export class UsuarioService {
     let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
     return this._http.get(this.url + 'industria', { headers: headers });
   }
+
+  addIndustria(data: Object, token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.post(this.url + 'industria/add', data, { headers: headers });
+  }
 }

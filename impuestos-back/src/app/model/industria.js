@@ -35,7 +35,7 @@ module.exports = {
 
     queryId: async(id) => {
         return new Promise(function(resolve, reject){
-            const SELECT = "SELECT pr.Id, pr.NumeroCuenta, pr.Avaluo, pr.Direccion, pr.Destino, pr.AreaTerritorio, pr.Estrato, pr.AreaConstruida, p.Id AS Propietario_id, CONCAT_WS(' ', p.Nombres, p.Apellidos) AS Propietario FROM predial AS pr JOIN usuario AS p ON (pr.Propietario = p.Id) WHERE pr.id = ?;";
+            const SELECT = "SELECT i.Id, i.NIT, i.NumeroPlaca, i.Direccion, i.Propietario, i.Avaluo, i.EsTienda, i.InicioActividad, i.TipoRegimen, i.TipoPersona, p.Id AS Propietario_id, CONCAT_WS(' ', p.Nombres, p.Apellidos) AS Propietario FROM industria AS i JOIN usuario AS p ON (i.Propietario = p.Id) WHERE id=?;";
             const query = mysql.format(SELECT, [id]);        
             
             connection.query(query, (err, result, fileds) => {
