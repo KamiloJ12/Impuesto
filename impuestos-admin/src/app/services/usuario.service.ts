@@ -63,4 +63,8 @@ export class UsuarioService {
     return this._http.put(this.url + 'predial/update', data, { headers: headers });
   }
 
+  getIndustrias(token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'industria', { headers: headers });
+  }
 }

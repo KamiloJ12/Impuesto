@@ -35,7 +35,6 @@ export class IndexPredialComponent implements OnInit {
     this._usuarioService.getPrediales(this.token).subscribe(
       response => {
         this.prediales = response;
-        console.log(this.prediales);
       },
       error => {
         iziToast.show({
