@@ -153,7 +153,6 @@ module.exports = {
 
     login: async(req, res, next) => {
         try {
-            console.log(req.body);
             let user = await usuario.queryEmail(req.body.Email);
 
             if(!user) {

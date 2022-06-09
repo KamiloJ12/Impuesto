@@ -1,6 +1,59 @@
 <app-navbar (onToggleSideNav)="onToggleSideNav($event)"></app-navbar>
 
 <div class="home" [ngClass]="isSideNavCollapsed ? 'close': ''">
-    <p>index-vehiculo works!</p>
+    
+    <div class="card shadow mb-4" style="min-height:100vh">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+          <h4 class="m-0 font-weight-bold text-primary">Vehiculo</h4>
+          <a [routerLink]="['/vehiculos/add']" class="d-flex align-items-center">Nuevo Vehiculo<i
+              class='bx bx-chevron-right bx-sm'></i></a>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Placa</th>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Serie</th>
+                  <th>Color</th>
+                  <th>Tipo</th>
+                  <th>Propietario</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Id</th>
+                  <th>Placa</th>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Serie</th>
+                  <th>Color</th>
+                  <th>Tipo</th>
+                  <th>Propietario</th>
+                  <th></th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr *ngFor="let vehiculo of vehiculos">
+                  <td>{{vehiculo.Id}}</td>
+                  <td>{{vehiculo.Placa}}</td>
+                  <td>{{vehiculo.Marca}}</td>
+                  <td>{{vehiculo.Modelo}}</td>
+                  <td>{{vehiculo.Serie}}</td>
+                  <td>{{vehiculo.Color}}</td>
+                  <td>{{vehiculo.Tipo}}</td>
+                  <td>{{vehiculo.Propietario}}</td>
+                  <td><a [routerLink]="['/vehiculos', vehiculo.Id]"><i class='bx bxs-edit bx-sm'></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
 </div>
 
