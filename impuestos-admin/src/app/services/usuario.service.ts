@@ -102,4 +102,9 @@ export class UsuarioService {
     let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
     return this._http.put(this.url + 'vehiculo/update', data, { headers: headers });
   }
+
+  getImpuestosIndustrias(token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'impuesto/industrias', { headers: headers });
+  }
 }

@@ -15,6 +15,7 @@ import { UpdateIndustriaComponent } from './components/industrias/update-industr
 import { IndexVehiculoComponent } from './components/vehiculos/index-vehiculo/index-vehiculo.component';
 import { AddVehiculoComponent } from './components/vehiculos/add-vehiculo/add-vehiculo.component';
 import { UpdateVehiculoComponent } from './components/vehiculos/update-vehiculo/update-vehiculo.component';
+import { ImpuestosIndustriaComponent } from './components/industrias/impuestos-industria/impuestos-industria.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'industriaycomercio', children: [
     {path: '', component: IndexIndustriaComponent},
     {path: 'add', component: AddIndustriaComponent},
+    {path: 'impuestos', component: ImpuestosIndustriaComponent},
     {path: ':id', component: UpdateIndustriaComponent},
   ]},
 
