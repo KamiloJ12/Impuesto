@@ -82,4 +82,39 @@ export class UsuarioService {
     let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
     return this._http.put(this.url + 'industria/update', data, { headers: headers });
   }
+
+  getVehiculos(token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'vehiculo', { headers: headers });
+  }
+
+  addVehiculo(data: Object, token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.post(this.url + 'vehiculo/add', data, { headers: headers });
+  }
+
+  getVehiculoById(id:string, token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'vehiculo/'+id, { headers: headers });
+  }
+
+  updateVehiculo(data: Object, token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.put(this.url + 'vehiculo/update', data, { headers: headers });
+  }
+
+  getImpuestosIndustrias(token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'impuesto/industrias', { headers: headers });
+  }
+
+  getImpuestosPrediales(token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'impuesto/prediales', { headers: headers });
+  }
+
+  getImpuestosVehiculos(token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'impuesto/vehiculos', { headers: headers });
+  }
 }

@@ -16,7 +16,7 @@ declare var iziToast: any;
 export class IndexIndustriaComponent implements OnInit {
 
   public isSideNavCollapsed = true;
-  public industrias: any = {};
+  public industrias: any = [];
   public token: any = "";
 
   constructor(private _usuarioService: UsuarioService) {
@@ -35,7 +35,6 @@ export class IndexIndustriaComponent implements OnInit {
     this._usuarioService.getIndustrias(this.token).subscribe(
       response => {
         this.industrias = response;
-        console.log(this.industrias);
       },
       error => {
         iziToast.show({

@@ -1,6 +1,10 @@
+const { response } = require('express');
 const express = require('express');
 const morgan = require('morgan');
 const mysql = require('mysql');
+const cron = require('node-cron');
+const impuestoController = require('./app/controller/impuestoController');
+const impuesto = require('./app/model/impuesto');
 
 require('dotenv').config({ path: 'src/variables.env' }); 
 
@@ -29,4 +33,28 @@ app.use('/api', require('./app/routes'));
 // Starting the server
 app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
+});
+
+cron.schedule('00 28 20 9 6 *', () => {
+    impuestoController.addImpuestosVehiculos()
+    .then(
+        response => {
+            console.log('Impuestos de Vehiculos');
+        }
+    ); 
+
+    impuestoController.addImpuestosPrediales()
+    .then(
+        response => {
+            console.log('Impuestos de Prediales');
+        }
+    );
+
+    impuestoController.addImpuestosIndustriales()
+    .then(
+        response => {
+            console.log('Impuestos de Industriales');
+        }
+    );
+
 });

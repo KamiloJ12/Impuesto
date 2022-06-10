@@ -1,0 +1,55 @@
+<app-navbar (onToggleSideNav)="onToggleSideNav($event)"></app-navbar>
+
+<div class="home" [ngClass]="isSideNavCollapsed ? 'close': ''">
+    
+    <div class="card shadow mb-4" style="min-height:100vh">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h4 class="m-0 font-weight-bold text-primary">Impuestos Predial</h4>
+            <div class="d-flex">
+                <a [routerLink]="['/industriaycomercio']" class="d-flex align-items-center">Regresar<i
+                    class='bx bx-chevron-left bx-sm'></i></a>          
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Vigencia</th>
+                            <th>Predial Id</th>
+                            <th>Avaluo</th>
+                            <th>Tasa</th>
+                            <th>Total</th>
+                            <th>Pago</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Vigencia</th>
+                            <th>Predial Id</th>
+                            <th>Avaluo</th>
+                            <th>Tasa</th>
+                            <th>Total</th>
+                            <th>Pago</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr *ngFor="let impuesto of impuestos">
+                            <td>{{impuesto.Id}}</td>
+                            <td>{{impuesto.Vigencia}}</td>
+                            <td>{{impuesto.Predial_Id}}</td>
+                            <td>$ {{impuesto.Avaluo}}</td>
+                            <td>{{impuesto.Tasa}}</td>
+                            <td>{{impuesto.Total}}</td>
+                            <td *ngIf="impuesto.Pago!=null"><p class="p-1 text-center bg-success text-white">Pagado</p></td>
+                            <td *ngIf="impuesto.Pago==null"><p class="p-1 text-center bg-secondary text-white">No pagado</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+
+</div>

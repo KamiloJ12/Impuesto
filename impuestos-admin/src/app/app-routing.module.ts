@@ -15,6 +15,9 @@ import { UpdateIndustriaComponent } from './components/industrias/update-industr
 import { IndexVehiculoComponent } from './components/vehiculos/index-vehiculo/index-vehiculo.component';
 import { AddVehiculoComponent } from './components/vehiculos/add-vehiculo/add-vehiculo.component';
 import { UpdateVehiculoComponent } from './components/vehiculos/update-vehiculo/update-vehiculo.component';
+import { ImpuestosIndustriaComponent } from './components/industrias/impuestos-industria/impuestos-industria.component';
+import { ImpuestosVehiculosComponent } from './components/vehiculos/impuestos-vehiculos/impuestos-vehiculos.component';
+import { ImpuestosPredialComponent } from './components/predial/impuestos-predial/impuestos-predial.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -29,18 +32,21 @@ const routes: Routes = [
   {path: 'predial', children: [
     {path: '', component: IndexPredialComponent},
     {path: 'add', component: AddPredialComponent},
+    {path: 'impuestos', component: ImpuestosPredialComponent},
     {path: ':id', component: UpdatePredialComponent},
   ]},
 
   {path: 'industriaycomercio', children: [
     {path: '', component: IndexIndustriaComponent},
     {path: 'add', component: AddIndustriaComponent},
+    {path: 'impuestos', component: ImpuestosIndustriaComponent},
     {path: ':id', component: UpdateIndustriaComponent},
   ]},
 
   {path: 'vehiculos', children: [
     {path: '', component: IndexVehiculoComponent},
     {path: 'add', component: AddVehiculoComponent},
+    {path: 'impuestos', component: ImpuestosVehiculosComponent},
     {path: ':id', component: UpdateVehiculoComponent},
   ]},
 

@@ -19,6 +19,9 @@ import { IndexVehiculoComponent } from './components/vehiculos/index-vehiculo/in
 import { IndexIndustriaComponent } from './components/industrias/index-industria/index-industria.component';
 import { AddIndustriaComponent } from './components/industrias/add-industria/add-industria.component';
 import { UpdateIndustriaComponent } from './components/industrias/update-industria/update-industria.component';
+import { ImpuestosIndustriaComponent } from './components/industrias/impuestos-industria/impuestos-industria.component';
+import { ImpuestosVehiculosComponent } from './components/vehiculos/impuestos-vehiculos/impuestos-vehiculos.component';
+import { ImpuestosPredialComponent } from './components/predial/impuestos-predial/impuestos-predial.component';
 
 
 @NgModule({
@@ -38,6 +41,9 @@ import { UpdateIndustriaComponent } from './components/industrias/update-industr
     IndexIndustriaComponent,
     AddIndustriaComponent,
     UpdateIndustriaComponent,
+    ImpuestosIndustriaComponent,
+    ImpuestosVehiculosComponent,
+    ImpuestosPredialComponent,
   ],
   imports: [
     BrowserModule,

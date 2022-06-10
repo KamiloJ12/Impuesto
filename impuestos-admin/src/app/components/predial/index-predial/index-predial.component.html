@@ -1,9 +1,4 @@
-<app-navbar></app-navbar>
-
-
-
 <app-navbar (onToggleSideNav)="onToggleSideNav($event)"></app-navbar>
-
 
 <div class="home" [ngClass]="isSideNavCollapsed ? 'close': ''">
 
@@ -11,7 +6,10 @@
     <div class="card shadow mb-4" style="min-height:100vh">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h4 class="m-0 font-weight-bold text-primary">Predial</h4>
-            <a [routerLink]="['/predial/add']" class="d-flex align-items-center">Nuevo Predial<i class='bx bx-chevron-right bx-sm' style=""></i></a>          
+            <div class="d-flex">
+                <a [routerLink]="['/predial/impuestos']" class="d-flex align-items-center px-4">Impuestos</a>
+                <a [routerLink]="['/predial/add']" class="d-flex align-items-center">Nuevo Predial<i class='bx bx-chevron-right bx-sm' style=""></i></a>          
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">

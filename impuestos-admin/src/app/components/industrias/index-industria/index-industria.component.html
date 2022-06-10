@@ -5,7 +5,10 @@
     <div class="card shadow mb-4" style="min-height:100vh">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h4 class="m-0 font-weight-bold text-primary">Industria y Comercio</h4>
-            <a [routerLink]="['/industriaycomercio/add']" class="d-flex align-items-center">Nueva Industria<i class='bx bx-chevron-right bx-sm' style=""></i></a>          
+            <div class="d-flex">
+                <a [routerLink]="['/industriaycomercio/impuestos']" class="d-flex align-items-center px-4">Impuestos</a>
+                <a [routerLink]="['/industriaycomercio/add']" class="d-flex align-items-center">Nueva Industria<i class='bx bx-chevron-right bx-sm'></i></a>          
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
