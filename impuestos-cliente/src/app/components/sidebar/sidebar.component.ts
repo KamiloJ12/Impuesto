@@ -12,4 +12,14 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  impuetos():void {
+    const collapseUtilities = document.querySelector('#collapseUtilities');
+    if(collapseUtilities?.classList.contains('show')){
+      collapseUtilities?.classList.remove('show');
+    }else{
+      collapseUtilities?.classList.add('show');
+    }    
+    
+  }
+
 }
