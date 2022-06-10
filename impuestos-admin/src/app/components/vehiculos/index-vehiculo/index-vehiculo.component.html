@@ -5,8 +5,10 @@
     <div class="card shadow mb-4" style="min-height:100vh">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
           <h4 class="m-0 font-weight-bold text-primary">Vehiculo</h4>
-          <a [routerLink]="['/vehiculos/add']" class="d-flex align-items-center">Nuevo Vehiculo<i
-              class='bx bx-chevron-right bx-sm'></i></a>
+          <div class="d-flex">
+            <a [routerLink]="['/vehiculos/impuestos']" class="d-flex align-items-center px-4">Impuestos</a>
+            <a [routerLink]="['/vehiculos/add']" class="d-flex align-items-center">Nuevo Vehiculo<i class='bx bx-chevron-right bx-sm'></i></a>
+          </div>
         </div>
         <div class="card-body">
           <div class="table-responsive">

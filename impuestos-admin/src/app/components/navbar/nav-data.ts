@@ -1,9 +1,9 @@
 export const navbarData = [
-    {
+    /* {
         routeLink: '/inicio',
         icon: 'bx bx-home-alt icon',
         label: 'Inicio'
-    },
+    }, */
     {
         routeLink: '/usuarios',
         icon: 'bx bx-user-pin icon',
@@ -24,9 +24,9 @@ export const navbarData = [
         icon: 'bx bx-car icon',
         label: 'Vehiculos'
     },
-    {
+    /* {
         routeLink: '/pagos',
         icon: 'bx bx-money-withdraw icon',
         label: 'Pagos'
-    }
+    } */
 ]

@@ -107,4 +107,14 @@ export class UsuarioService {
     let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
     return this._http.get(this.url + 'impuesto/industrias', { headers: headers });
   }
+
+  getImpuestosPrediales(token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'impuesto/prediales', { headers: headers });
+  }
+
+  getImpuestosVehiculos(token: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization': token});
+    return this._http.get(this.url + 'impuesto/vehiculos', { headers: headers });
+  }
 }
