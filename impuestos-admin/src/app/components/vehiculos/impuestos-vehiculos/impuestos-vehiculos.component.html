@@ -4,7 +4,7 @@
     
     <div class="card shadow mb-4" style="min-height:100vh">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h4 class="m-0 font-weight-bold text-primary">Impuestos Industria y Comercio</h4>
+            <h4 class="m-0 font-weight-bold text-primary">Impuestos Vehicular</h4>
             <div class="d-flex">
                 <a [routerLink]="['/industriaycomercio']" class="d-flex align-items-center">Regresar<i
                     class='bx bx-chevron-left bx-sm'></i></a>          
@@ -17,7 +17,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Vigencia</th>
-                            <th>Industria Id</th>
+                            <th>Vehiculo Id</th>
                             <th>Avaluo</th>
                             <th>Tasa</th>
                             <th>Total</th>
@@ -28,7 +28,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Vigencia</th>
-                            <th>Industria Id</th>
+                            <th>Vehiculo Id</th>
                             <th>Avaluo</th>
                             <th>Tasa</th>
                             <th>Total</th>
@@ -39,7 +39,7 @@
                         <tr *ngFor="let impuesto of impuestos">
                             <td>{{impuesto.Id}}</td>
                             <td>{{impuesto.Vigencia}}</td>
-                            <td>{{impuesto.Industria_Id}}</td>
+                            <td>{{impuesto.Vehiculo_Id}}</td>
                             <td>$ {{impuesto.Avaluo}}</td>
                             <td>{{impuesto.Tasa}}</td>
                             <td>{{impuesto.Total}}</td>
