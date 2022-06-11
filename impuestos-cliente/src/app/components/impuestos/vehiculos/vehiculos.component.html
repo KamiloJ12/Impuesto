@@ -1,0 +1,28 @@
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../../assets/image/ALCALDIA-AL-DIA-03-1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="../../../assets/image/banner-alcaldia-home_Mesa-de-trabajo-1-1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="../../../assets/image/CON-CLICK_Mesa-de-trabajo-1.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+  
+  <div class="card shadow mt-4">
+    <div class="card-header py-3">
+      <h2 class="m-0 font-weight-bold text-primary" style="text-align:center">Impuesto Vehicular</h2>
+    </div>
+    <div class="card-body align-items-center ">
+      <form (submit)="submit()">
+        <div class="form-group">
+          <label for="predial">Placa</label>
+          <input type="text" class="form-control" id="predial" aria-describedby="predial" name="placa" [(ngModel)]="placa">
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+    </div>
+  </div>

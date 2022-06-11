@@ -89,6 +89,51 @@ module.exports = {
             });
         });
     },
+
+    getByVehiculoId: async(id) => {
+        return new Promise(function(resolve, reject){
+            const SELECT = "SELECT * FROM impuesto WHERE Vehiculo_Id=?;";
+            const query = mysql.format(SELECT, [id]);  
+            
+            connection.query(query, (err, result, fileds) => {
+                if (err) {
+                    reject(err);
+                }else {
+                    resolve(result);
+                }
+            });
+        });
+    },
+
+    getByPredialId: async(id) => {
+        return new Promise(function(resolve, reject){
+            const SELECT = "SELECT * FROM impuesto WHERE Predial_Id=?;";
+            const query = mysql.format(SELECT, [id]);  
+            
+            connection.query(query, (err, result, fileds) => {
+                if (err) {
+                    reject(err);
+                }else {
+                    resolve(result);
+                }
+            });
+        });
+    },
+
+    getByIndustrialId: async(id) => {
+        return new Promise(function(resolve, reject){
+            const SELECT = "SELECT * FROM impuesto WHERE Industria_Id=?;";
+            const query = mysql.format(SELECT, [id]);  
+            
+            connection.query(query, (err, result, fileds) => {
+                if (err) {
+                    reject(err);
+                }else {
+                    resolve(result);
+                }
+            });
+        });
+    },
     /* update: async(datos) => {
         return new Promise(function(resolve, reject){
             const { Vigencia, Avaluo, Tasa, FechaVencimiento, Vehiculo_Id, Predial_Id, Industria_Id } = datos;

@@ -48,6 +48,21 @@ module.exports = {
         });
     },
 
+    queryNit: async(nit) => {
+        return new Promise(function(resolve, reject){
+            const SELECT = "SELECT pr.Id, pr.NumeroCuenta, pr.Avaluo, pr.Direccion, pr.Destino, pr.AreaTerritorio, pr.Estrato, pr.AreaConstruida, p.Id AS Propietario_id, CONCAT_WS(' ', p.Nombres, p.Apellidos) AS Propietario FROM predial AS pr JOIN usuario AS p ON (pr.Propietario = p.Id) WHERE pr.NumeroCuenta = ?;";
+            const query = mysql.format(SELECT, [nit]);        
+            
+            connection.query(query, (err, result, fileds) => {
+                if (err) {
+                    reject(err);
+                }else {
+                    resolve(result[0]);
+                }
+            });
+        });
+    },
+
     update: async(datos) => {
         return new Promise(function(resolve, reject){
             const { Id, NumeroCuenta, Avaluo, Direccion, Destino, AreaTerritorio, Estrato, AreaConstruida, Propietario_id } = datos;

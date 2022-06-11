@@ -238,4 +238,43 @@ module.exports = {
             next(e);
         } 
     },
+
+    getVehiculoId: async(req, res, next) => {
+        try {
+            const {id} = req.params;
+            const reg = await impuesto.getByVehiculoId(id);
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Ocurrió un error'
+            });
+            next(e);
+        } 
+    },
+
+    getPredialId: async(req, res, next) => {
+        try {
+            const {id} = req.params;
+            const reg = await impuesto.getByPredialId(id);
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Ocurrió un error'
+            });
+            next(e);
+        } 
+    },
+
+    getIndustriaId: async(req, res, next) => {
+        try {
+            const {id} = req.params;
+            const reg = await impuesto.getByIndustrialId(id);
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Ocurrió un error'
+            });
+            next(e);
+        } 
+    },
 };

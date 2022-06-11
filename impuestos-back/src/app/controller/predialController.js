@@ -39,6 +39,19 @@ module.exports = {
         } 
     },
 
+    queryNit: async(req, res, next) => {
+        try {
+            const {nit} = req.params;
+            const reg = await predial.queryNit(nit);
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Ocurrió un error'
+            });
+            next(e);
+        } 
+    },
+
     update: async(req, res, next) => {
         try {
             const reg = await predial.update(req.body);

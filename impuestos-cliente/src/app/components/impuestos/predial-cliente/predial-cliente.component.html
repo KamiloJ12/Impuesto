@@ -1,0 +1,58 @@
+
+<div class="card shadow mt-4">
+    <div class="card-header py-3">
+      <h2 class="m-0 font-weight-bold text-primary" style="text-align:center">Impuesto Predial</h2>
+    </div>
+    <div class="card-body align-items-center ">
+      <div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Numero de Cuenta:</label><p>{{predial.NumeroCuenta}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Direccion:</label><p>{{predial.Direccion}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Destino:</label><p>{{predial.Destino}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Estrato:</label><p>{{predial.Estrato}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Area Territorio:</label><p>{{predial.AreaTerritorio}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Area Construida:</label><p>{{predial.AreaConstruida}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Avaluo:</label><p>{{predial.Avaluo}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Propietario:</label><p>{{predial.Propietario}}</p>
+        </div>
+      </div>
+      <div>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Vigencia</th>
+              <th scope="col">Fecha vencimiento</th>
+              <th scope="col">Total</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let impuesto of impuestos">
+              <th>{{impuesto.Id}}</th>
+              <td>{{impuesto.Vigencia}}</td>
+              <td>{{impuesto.FechaVencimiento}}</td>
+              <td>{{impuesto.Total}}</td>
+              <td *ngIf="impuesto.Pago != null">Pagado</td>
+              <td *ngIf="impuesto.Pago == null">Sin Pago</td>
+            </tr>         
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
