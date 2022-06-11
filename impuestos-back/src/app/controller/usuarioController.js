@@ -154,14 +154,14 @@ module.exports = {
     login: async(req, res, next) => {
         try {
             console.log(req.body);
-            let user = await usuario.queryEmail(req.body.email);
+            let user = await usuario.queryEmail(req.body.Email);
 
             if(!user) {
-                user = await usuario.queryUsuario(req.body.email);
+                user = await usuario.queryUsuario(req.body.Email);
             }
 
             if (user) {
-                let match = await bcrypt.compare(req.body.password, user.Password);
+                let match = await bcrypt.compare(req.body.Password, user.Password);
                 if (match) {
                     if(user.Estado == 'Activo'){
                         let tokenReturn = await token.encode(user.Id, user.Rol);

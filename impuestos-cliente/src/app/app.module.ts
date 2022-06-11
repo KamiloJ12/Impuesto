@@ -8,6 +8,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ContactenosComponent } from './components/contactenos/contactenos.component';
 import { PredialComponent } from './components/impuestos/predial/predial.component';
 import { MisionyvisionComponent } from './components/misionyvision/misionyvision.component';
+import { FuncionesComponent } from './components/funciones/funciones.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MisionyvisionComponent } from './components/misionyvision/misionyvision
     InicioComponent,
     ContactenosComponent,
     PredialComponent,
-    MisionyvisionComponent
+    MisionyvisionComponent,
+    FuncionesComponent
   ],
   imports: [
     BrowserModule,
