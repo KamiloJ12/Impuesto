@@ -9,6 +9,7 @@ import { VehiculoClienteComponent } from './components/impuestos/vehiculo-client
 import { VehiculosComponent } from './components/impuestos/vehiculos/vehiculos.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { MisionyvisionComponent } from './components/misionyvision/misionyvision.component';
+import { FuncionesComponent } from './components/funciones/funciones.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
     {path: '', component: IndustriaComponent},
     {path: ':id', component: IndustriaClienteComponent},
   ]},
+  {path: 'funciones', component: FuncionesComponent},
 ];
 
 @NgModule({

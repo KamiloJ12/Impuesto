@@ -16,6 +16,7 @@ import { PredialClienteComponent } from './components/impuestos/predial-cliente/
 import { IndustriaClienteComponent } from './components/impuestos/industria-cliente/industria-cliente.component';
 import { VehiculoClienteComponent } from './components/impuestos/vehiculo-cliente/vehiculo-cliente.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FuncionesComponent } from './components/funciones/funciones.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     IndustriaComponent,
     PredialClienteComponent,
     IndustriaClienteComponent,
-    VehiculoClienteComponent
+    VehiculoClienteComponent,
+    FuncionesComponent
   ],
   imports: [
     BrowserModule,
