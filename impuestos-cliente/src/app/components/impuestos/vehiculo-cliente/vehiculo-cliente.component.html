@@ -1,0 +1,55 @@
+
+<div class="card shadow mt-4">
+    <div class="card-header py-3">
+      <h2 class="m-0 font-weight-bold text-primary" style="text-align:center">Impuesto Vehicular</h2>
+    </div>
+    <div class="card-body align-items-center ">
+      <div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Placa:</label><p>{{vehiculo.Placa}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Tipo vehiculo:</label><p>{{vehiculo.Tipo}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Marca:</label><p>{{vehiculo.Marca}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Modelo:</label><p>{{vehiculo.Modelo}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Color:</label><p>{{vehiculo.Color}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Avaluo:</label><p>{{vehiculo.Avaluo}}</p>
+        </div>
+        <div class="d-flex">
+          <label class="mx-2" id="placa">Propietario:</label><p>{{vehiculo.Propietario}}</p>
+        </div>
+      </div>
+      <div>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Vigencia</th>
+              <th scope="col">Fecha vencimiento</th>
+              <th scope="col">Total</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let impuesto of impuestos">
+              <th>{{impuesto.Id}}</th>
+              <td>{{impuesto.Vigencia}}</td>
+              <td>{{impuesto.FechaVencimiento}}</td>
+              <td>{{impuesto.Total}}</td>
+              <td *ngIf="impuesto.Pago != null">Pagado</td>
+              <td *ngIf="impuesto.Pago == null">Sin Pago</td>
+            </tr>         
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>

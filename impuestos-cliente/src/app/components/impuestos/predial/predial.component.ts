@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-predial',
   templateUrl: './predial.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PredialComponent implements OnInit {
 
-  constructor() { }
+  public numCuenta = '';
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  submit(): void {
+    this.router.navigate(['/predial/', this.numCuenta]);
   }
 
 }

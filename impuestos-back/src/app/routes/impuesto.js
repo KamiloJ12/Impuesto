@@ -9,5 +9,8 @@ router.get('', auth.verifyAdministrador, impuestoController.list);
 router.get('/industrias', auth.verifyUsuarios, impuestoController.listIndustrias);
 router.get('/prediales', auth.verifyUsuarios, impuestoController.listPrediales);
 router.get('/vehiculos', auth.verifyUsuarios, impuestoController.listVehiculos);
+router.get('/vehiculo/:id', impuestoController.getVehiculoId);
+router.get('/predial/:id', impuestoController.getPredialId);
+router.get('/industria/:id', impuestoController.getPredialId);
 
 module.exports = router;

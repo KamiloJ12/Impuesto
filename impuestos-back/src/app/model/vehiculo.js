@@ -48,6 +48,21 @@ module.exports = {
         });
     },
 
+    queryByPlaca: async(placa) => {
+        return new Promise(function(resolve, reject){
+            const SELECT = "SELECT v.Id, v.Placa, v.Marca, v.Modelo, v.Serie, v.Color, v.Tipo, v.Avaluo, p.Id AS Propietario_id, CONCAT_WS(' ', p.Nombres, p.Apellidos) AS Propietario FROM vehiculo AS v JOIN usuario AS p ON (v.Propietario = p.Id) WHERE v.Placa=?;";
+            const query = mysql.format(SELECT, [placa]);        
+            
+            connection.query(query, (err, result, fileds) => {
+                if (err) {
+                    reject(err);
+                }else {
+                    resolve(result[0]);
+                }
+            });
+        });
+    },
+
     update: async(datos) => {
         return new Promise(function(resolve, reject){
             const { Id, Placa, Marca, Modelo, Serie, Color, Tipo, Avaluo, Propietario_id } = datos;

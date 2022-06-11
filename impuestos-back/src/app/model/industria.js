@@ -48,6 +48,21 @@ module.exports = {
         });
     },
 
+    queryNit: async(nit) => {
+        return new Promise(function(resolve, reject){
+            const SELECT = "SELECT i.Id, i.NIT, i.NumeroPlaca, i.Direccion, i.Propietario, i.Avaluo, i.EsTienda, Date_format(i.InicioActividad, '%Y-%m-%d') AS InicioActividad, i.TipoRegimen, i.TipoPersona, p.Id AS Propietario_id, CONCAT_WS(' ', p.Nombres, p.Apellidos) AS Propietario FROM industria AS i JOIN usuario AS p ON (i.Propietario = p.Id) WHERE i.NIT=?;";
+            const query = mysql.format(SELECT, [nit]);        
+            
+            connection.query(query, (err, result, fileds) => {
+                if (err) {
+                    reject(err);
+                }else {
+                    resolve(result[0]);
+                }
+            });
+        });
+    },
+
     update: async(datos) => {
         return new Promise(function(resolve, reject){
             const { NIT, NumeroPlaca, Direccion, Propietario_id, Avaluo, EsTienda, InicioActividad, TipoRegimen, TipoPersona, Id } = datos;
